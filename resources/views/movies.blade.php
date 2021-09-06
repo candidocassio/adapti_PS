@@ -9,7 +9,10 @@
 <body>
     @foreach ($movies as $movie)
         <h4>{{$movie->title}}</h4>
-        <img src="https://source.unsplash.com/600x800/?nature,water" alt="Imagem">
+        <div>
+            <h4>{{$movie->country->name}}</h4>
+        </div>
+        <!--<img src="https://source.unsplash.com/600x800/?nature,water" alt="Imagem">-->
     @endforeach
 </body>
 </html>
