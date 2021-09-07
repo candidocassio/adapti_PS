@@ -9,6 +9,16 @@ class Movie extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'genre',
+        'country_id',
+        'release',
+        'synopsis',
+        'rating',
+        'image',
+    ];
+    
     public function country()
     {
         return $this->belongsTo(Country::class);
