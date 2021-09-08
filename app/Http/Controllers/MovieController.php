@@ -64,6 +64,8 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    
     public function edit($id)
     {
         if(!$movie = Movie::find($id)){
@@ -102,6 +104,29 @@ class MovieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $FilmeDeletetar = Movie::find($id);
+        $FilmeDeletetar->delete();
+
+        return redirect('/movie'); //retornar para movie com os valores do banco de dados atualizados
+    }
+
+
+    
+    public function search(Request $request)
+    {
+        //dd($request['search-item']);
+        //dd($request);
+        $FilmesMatchByTitle = Movie::where([
+            ['title', '!=', null],
+            [function ($query) use ($request) {
+                if(($term = $request['search-item']))  {
+                    $query->Where('title', 'LIKE', '%' . $term . '%')->get();
+                }
+            }]
+        ])
+            ->orderBy('id', 'desc')
+            ->paginate(20);
+            //dd($FilmesMatchByTitle);
+            return view('movie.search', compact('FilmesMatchByTitle')); //enviar vetor com instancias pesquisadas para blade de search blade
     }
 }
