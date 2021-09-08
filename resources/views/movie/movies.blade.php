@@ -15,7 +15,8 @@
             <li>
                 <h4>Titulo do Filme: <b>{{$movie->title}}</b> e País de Origem: <b>{{$movie->country->name}}</b></h4><br>
                 
-                <a href="{{route('movie.edit', $movie->id) }}">Editar Filme</a><br><br>
+                <a href="{{route('movie.edit', $movie->id) }}"><button>Editar Filme</button></a>
+                <a href="{{route('movie.edit', $movie->id) }}"><button>Excluir Filme</button></a><br><br>
                 <img src="{{ url("/storage/{$movie->image}") }}" alt="{{ $movie->title }}">
             </li>
         </ul>
