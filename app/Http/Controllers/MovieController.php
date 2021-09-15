@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +17,7 @@ class MovieController extends Controller
     public function index()
     {
         $movies = Movie::all();
-        return view('movie.movies', compact('movies'));
+        return view('movie.index', compact('movies'));
 
     }
 
@@ -27,7 +28,9 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return view('movie.create');
+        $countries = Country::all();
+
+        return view('movie.create', compact('countries'));
     }
 
     /**
@@ -41,9 +44,8 @@ class MovieController extends Controller
         $data = $request->all();
 
         $data['image'] = $request->file('image')->store('movies', 'public');
-
+        
         $movie = Movie::create($data);
-
         return redirect(route('movie.index'));
     }
 
@@ -71,7 +73,9 @@ class MovieController extends Controller
         if(!$movie = Movie::find($id)){
             return redirect()->back();
         }
-        return view('movie.edit', compact('movie'));
+
+        $countries = Country::all();
+        return view('movie.edit', compact('movie', 'countries'));
     }
 
     /**
@@ -107,7 +111,7 @@ class MovieController extends Controller
         $FilmeDeletetar = Movie::find($id);
         $FilmeDeletetar->delete();
 
-        return redirect('/movie'); //retornar para movie com os valores do banco de dados atualizados
+        return redirect('/movie.index'); //retornar para movie com os valores do banco de dados atualizados
     }
 
 
@@ -116,7 +120,7 @@ class MovieController extends Controller
     {
         //dd($request['search-item']);
         //dd($request);
-        $FilmesMatchByTitle = Movie::where([
+        $movies = Movie::where([
             ['title', '!=', null],
             [function ($query) use ($request) {
                 if(($term = $request['search-item']))  {
@@ -127,6 +131,6 @@ class MovieController extends Controller
             ->orderBy('id', 'desc')
             ->paginate(20);
             //dd($FilmesMatchByTitle);
-            return view('movie.search', compact('FilmesMatchByTitle')); //enviar vetor com instancias pesquisadas para blade de search blade
+            return view('movie.index', compact('movies')); //enviar vetor com instancias pesquisadas para blade de search blade
     }
 }
