@@ -32,7 +32,7 @@
         <textarea name="synopsis" id="synopsis" cols="30" rows="10"></textarea><br><br>
 
         <input type="file" name="image" accept="image/*" required>
-        <button class="button-form" type="submit" form="form-create">Criar Filme</button>
+        <button class="button-submit" type="submit" form="form-create">Criar Filme</button>
     </form>
 
     <a class="button-back" type="submit" href="{{route('movie.index')}}">Voltar</a>

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Karantina&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); 
+
+:root{
+    --corPrincipal: rgba(186, 220, 88, 1);
+    --corBtn-1 : rgba(19, 15, 64, 1);
+    --cor-txt-footer : rgba(19, 15, 64, 1);
+    --cor-txt-hover-index : rgba(255, 255, 255, 1);
+    --cor-txt-form-input : #30336B;
+    --cor-txt-header-logo : black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-container{
+    margin: 0;
+    padding-left: 10%;
+    padding-right: 10%;    
+}
+
+.hearder-container{
+    margin: 0;
+    padding: 0;
+    background-color: var(--corPrincipal);
+    display: flex;
+}
+
+.footer-container{
+    position: absolute;
+    justify-content: space-between;
+    width: 1260px;
+    height: 61px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 18px;
+    background-color: var(--corPrincipal);
+    
+}
+.container-author p {
+    position: static;
+    text-align: center ;
+}
+
+.footer-link-social-midia{
+
+}
+
+
+.nav-container{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    text-align: left;
+    padding: 15px 30px;
+}
+
+.logo-container a{
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold; 
+    color: var(--cor-txt-header-logo);
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Drop down menu */
+
+.menu-dropdown{
+    /* background-color: rgb(106, 255, 106); */
+    list-style-type: none;
+
+}
+
+
+
+.menu-dropdown-container ul li{
+    display: inline-block;
+}
+.link-item-dropdown-menu{
+    color: var(--cor-txt-header-logo);
+    text-decoration: none;
+    
+}
+.link-item-dropdown-menu:hover{
+    background-color: white;
+}
+
+.menu-dropdown ul{
+    display: none;
+    position: absolute;
+}
+
+.menu-drop-donw-icon li:hover ul {
+    display: block;
+}

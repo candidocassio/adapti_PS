@@ -2,9 +2,6 @@
 
 @section('title', 'Filmes | Adapti PS')
 
-@section('header')
-@endsection
-
 @section('content')
     @foreach ($movies as $movie)
         <div class="card-film">
@@ -13,7 +10,7 @@
                     <form action="{{route('movie.destroy', $movie->id) }}" method="POST">
                         @csrf
                         @method('delete')
-                        <button type="submit"> Apagar Filme </button>
+                        <button class="button-delete" type="submit"> Apagar Filme </button>
                     </form>
             </div>
 
