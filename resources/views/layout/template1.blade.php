@@ -18,29 +18,30 @@
 <body>
 
     <header class="hearder-container">       
-        <nav class="nav-container">
-            <div class="logo-container">
-                <a href="{{route('movie.index')}}"> Adapti <p style="">Filmes</p></a>
+        <nav class="nav-header-container">
+
+            <div class="logo-container-header">
+                <a href="{{route('movie.index')}}"> Adapti Filmes</a>
                 {{-- <img class="logo-img" src="{{asset('resources/img/logoADAPTI.png')}}" alt="logo"> --}}
             </div>
 
-            <div class="menu-dropdown-container">
-                <ul class="menu-dropdown">
-                    <li class="menu-drop-donw-icon">Menu</li>
-                    <ul>
-                        <li class="item-dropdown-menu"><a class="link-item-dropdown-menu" href="">Top Rated Movies</a></li>
-                        <li class="item-dropdown-menu"><a class="link-item-dropdown-menu" href="">Most Popular Movies</a></li>
-                        <li class="item-dropdown-menu"><a class="link-item-dropdown-menu" href="">Show and Movie Genres</a></li>
-                        <li class="item-dropdown-menu"><a class="link-item-dropdown-menu" href="">Releases</a></li>
-                    </ul>
+            <div class="dropdown-hearder">
+                <ul>
+                    <li><a class="dropbtn-hearder"> <button>Menu</button>  </a>
+                        <ul>
+                            <li><a class="dropdown-intems-list" href="">Top Rated Movies</a></li>
+                            <li><a class="dropdown-intems-list" href="">Most Popular Movies</a></li>
+                            {{-- <li><a class="dropdown-intems-list" href="">Show and Movie Genero</a></li> --}}
+                            <li><a class="dropdown-intems-list" href="">Releases</a></li>                     
+                        </ul></li>
                 </ul>
             </div>
 
             <div class="search-header-container">
                 <form class="form-search" id="form-search" action="{{ route('movie.search') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input  class = "input-search-bar" type="search" id="search-item" name="search-item" required placeholder="Digite sua pesquisa">
-                    <button class="submit-btn-search-bar" type="submit">Pesquisar</button>
+                    <input  class = "input-search-bar" type="search" id="search-item" name="search-item" required placeholder="Busque Filmes">
+                    <button class="submit-btn-search-bar" type="submit"><span class="fa fa-search"></span></button>
 
                 </form>
             </div>
@@ -59,10 +60,10 @@
 
     
     <footer class="footer-container">
-        <div class="container-author">
-            Desenvolvido por <a href="https://www.adapti.info/"> Adapti-Soluções</a> Web 2021
+        <div class="footer-item-author">
+            <p> Desenvolvido por <a href="https://www.adapti.info/"> Adapti-Soluções</a> Web 2021</p>
         </div>
-        <div class="footer-link-social-midia">
+        <div class="footer-item-social-midia">
             <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a>
             <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin-in"></i></a>

@@ -2,103 +2,153 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); 
 
-:root{
-    --corPrincipal: rgba(186, 220, 88, 1);
-    --corBtn-1 : rgba(19, 15, 64, 1);
-    --cor-txt-footer : rgba(19, 15, 64, 1);
-    --cor-txt-hover-index : rgba(255, 255, 255, 1);
-    --cor-txt-form-input : #30336B;
-    --cor-txt-header-logo : black;
-}
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+/* 
 
+*/
+    :root{
+
+        /* Declaração de variaveis de cor */
+        --corPrincipal: rgba(186, 220, 88, 1);
+        --corBtn-1 : rgba(19, 15, 64, 1);
+        --cor-txt-footer : rgba(19, 15, 64, 1);
+        --cor-txt-hover-index : rgba(255, 255, 255, 1);
+        --cor-txt-form-input : #30336B;
+        --cor-txt-header-logo : black;
+    }
+
+/* Estilizações globais 
+    - 
+*/
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+
+
+/* HEADER
+    - Estilos relativos a header do site
+*/
+
+    .hearder-container{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background-color: var(--corPrincipal);
+        width: 100%;
+    }
+
+    .nav-header-container{
+        width: 100%; 
+        justify-content: space-between;
+        display: flex;
+        padding: 15px 30px;
+    }
+
+    .logo-container-header a{
+        font-size: 24px;
+        font-weight: bold; 
+        text-decoration: none;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    /* Menu dropdonw 
+        - Menu drop down sem responsividade v.0.1
+    */
+        .dropdown-hearder ul{
+            list-style: none;
+            position: relative;
+            
+            
+        }
+        .dropdown-hearder ul li{
+            width: 200px;
+            float: left;
+        }
+        
+        .dropdown-hearder a{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            background-color: var(--corPrincipal);
+            padding-top:5px ;
+            padding-bottom: 5px;
+            color: var(--cor-txt-header-logo);
+            
+        }
+
+        .dropdown-hearder ul ul{
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .dropdown-hearder ul li:hover ul{
+            visibility:visible;
+        }
+
+        .dropdown-hearder a:hover{
+            background-color: rgb(237, 240, 228);
+        }
+
+
+        .dropdown-intems-list{
+            text-decoration: none;
+            color: var(--cor-txt-header-logo);
+            cursor: pointer;
+            text-align: center;
+        }
+
+
+
+
+/* Body Estilização
+        - Fazer o grid
+        - hover para a descrição sobrepor a imagem
+        - posicionar botões no topo da imagem, escolher icones
+        - se possivel aplicar um layout diferente para 'impressionar'
+*/
 .main-container{
     margin: 0;
     padding-left: 10%;
     padding-right: 10%;    
 }
 
-.hearder-container{
-    margin: 0;
-    padding: 0;
-    background-color: var(--corPrincipal);
-    display: flex;
-}
 
+/* Footeer Estlização
+    - Atualizar layout para usar grid, e melhorar a responsividade
+    - colocar icones melhores e colocar icone de <3
+    - decidir a quem creditar
+*/
 .footer-container{
-    position: absolute;
-    justify-content: space-between;
+    position:absolute;
+    bottom:0;
+    display: flex;
+    align-items: center;
     width: 1260px;
-    height: 61px;
+    height: 30px;
     display: flex;
     margin: 0;
     padding: 0;
     width: 100%;
-    font-size: 18px;
+    font-size: 15px;
     background-color: var(--corPrincipal);
+    justify-content: space-between;
     
 }
-.container-author p {
-    position: static;
+.footer-item-author p {
+    
     text-align: center ;
 }
-
-.footer-link-social-midia{
-
+.footer-item-social-midia{
+margin-right: 5%;
 }
-
-
-.nav-container{
-    display: flex;
-    width: 100%;
+.footer-item-social-midia i{
     position: relative;
-    justify-content: space-between;
-    text-align: left;
-    padding: 15px 30px;
-}
-
-.logo-container a{
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold; 
-    color: var(--cor-txt-header-logo);
-    cursor: pointer;
-    display: inline-block;
-}
-
-/* Drop down menu */
-
-.menu-dropdown{
-    /* background-color: rgb(106, 255, 106); */
-    list-style-type: none;
-
-}
-
-
-
-.menu-dropdown-container ul li{
-    display: inline-block;
-}
-.link-item-dropdown-menu{
-    color: var(--cor-txt-header-logo);
-    text-decoration: none;
-    
-}
-.link-item-dropdown-menu:hover{
-    background-color: white;
-}
-
-.menu-dropdown ul{
-    display: none;
-    position: absolute;
-}
-
-.menu-drop-donw-icon li:hover ul {
-    display: block;
+    align-self: right;
+    color: black;
+    padding-right: 20px;
+    font-size: 25px;
 }
