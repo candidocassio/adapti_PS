@@ -8,7 +8,7 @@
         <h1 >Filmes</h1>
     </div>
 
-    <div style="padding-bottom: 10px">
+    <div class="line-style"style="padding-bottom: 10px">
         <hr>
     </div>
 

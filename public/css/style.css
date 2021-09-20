@@ -165,11 +165,13 @@
                 width: 100%;
                 height: 100%;
                 text-transform: uppercase;
+                text-decoration: none;
                 font-weight: 600;
                 padding-left: 10px;
                 padding-right: 10px;
                 border-radius: 10px;
                 white-space: nowrap;
+                color:rgb(237, 240, 228);
             }
             .btn-header-add-movie a{
                 text-decoration: none;
@@ -177,20 +179,15 @@
 
             .btn-header-add-movie:hover{
                 /* Colocar cor em variável */
-                background-color: red;
-                color: white;
+                background-color: white;
+                color: var(--corPrincipal);
                 
-                
+            }
+            .dropbtn-hearder-menuTxt{
+                display: inline;
             }
 
-            @media(max-width:500px){
-                
-                .btn-header-add-movie{
-                    padding: 5px 15px;
-                    font-size: 10px;
-                    white-space: nowrap;
-                }
-            }
+
 
             
 
@@ -307,6 +304,10 @@
         white-space: nowrap;
         margin-left: 10px;
         margin-right: 10px; 
+    }
+
+    .btn-drop-add-movie{
+        display:none;
     }
 
 
@@ -431,4 +432,49 @@
     color: black;
     padding-left: 20px;
     font-size: 25px;
+}
+
+@media(max-width:320px){
+                
+    .nav-hearder-container{
+        display: flex;
+    }
+    .header-add-movie{
+        display: none;
+    }
+    .btn-header-add-movie {
+        display: block;
+    }
+    .btn-drop-add-movie{
+        display: block;
+        text-align: left;
+    }
+    .dropbtn-hearder-menuTxt{
+        display: none;
+    }
+    .submit-btn-header-input{
+        display: none;
+    }
+    .search-header-input{
+        font-size: 10px;
+    }
+
+    .footer-item-author{
+        display: none;
+    }
+    .footer-container{
+        display: flex;
+        justify-content: center
+    }
+    .footer-item-social-midia{
+        margin-right: 0px;
+    }
+    .btn-save-film{
+        padding-top: 0px;
+        padding-bottom: 10px;
+    }
+    .main-title{
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
 }
