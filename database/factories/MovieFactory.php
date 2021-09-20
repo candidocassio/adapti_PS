@@ -25,10 +25,10 @@ class MovieFactory extends Factory
         return [
             'title' => $this->faker->name(),
             'genre' => $this->faker->name(),
-            'release' => $this->faker->dateTimeThisYear(),
+            'release' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'country_id' => $this->faker->randomDigitNotNull(),
             'synopsis' => $this->faker->text(),
-            'rating' => "9.8",
+            'rating' => $this->faker->numberBetween($min = 0, $max = 10),
             'image' => ' '
         ];
     }

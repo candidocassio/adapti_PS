@@ -16,7 +16,6 @@
         --cor-txt-form-input : #30336B;
         --cor-txt-header-logo : black;
     }
-
 /* Estilizações globais 
     - 
 */
@@ -34,25 +33,39 @@
 */
 
     .hearder-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
         margin: 0;
         padding: 0;
-        display: flex;
         background-color: var(--corPrincipal);
         width: 100%;
     }
 
     .nav-header-container{
         width: 100%; 
-        justify-content: space-between;
         display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        justify-content: start;
         padding: 15px 30px;
+        text-align: center;
+
     }
 
     .logo-container-header a{
+        display: flex;
         font-size: 24px;
+        padding-right: 10px;
         font-weight: bold; 
         text-decoration: none;
         color: rgba(255, 255, 255, 1);
+        
     }
 
     /* Menu dropdonw 
@@ -60,29 +73,33 @@
     */
         .dropdown-hearder ul{
             list-style: none;
-            position: relative;
-            
-            
+            z-index: 5;
         }
         .dropdown-hearder ul li{
-            width: 200px;
-            float: left;
-        }
+            width: 70px;
+            text-align: center;
+        }   
         
+
         .dropdown-hearder a{
             display: block;
             text-decoration: none;
-            text-align: center;
             background-color: var(--corPrincipal);
             padding-top:5px ;
             padding-bottom: 5px;
             color: var(--cor-txt-header-logo);
             
         }
+        .dropdown-hearder ul li ul li{
+            width: 180px;
+            text-align: left;
+                        
+        }
 
         .dropdown-hearder ul ul{
             position: absolute;
             visibility: hidden;
+            
         }
 
         .dropdown-hearder ul li:hover ul{
@@ -91,6 +108,7 @@
 
         .dropdown-hearder a:hover{
             background-color: rgb(237, 240, 228);
+            padding-left: 5px;
         }
 
 
@@ -98,11 +116,83 @@
             text-decoration: none;
             color: var(--cor-txt-header-logo);
             cursor: pointer;
-            text-align: center;
         }
 
+        /* Barra de pesquisa
+            - Eu coloquei na header pq eu tava olhando o IMDB e gostei bastante do laypout deles
+
+        */
+            .search-header-container{
+                display: flex;
+                width: 70%;  
+                  
+                            
+            }
 
 
+            .search-header-input-group{
+                display: flex;
+                width: 100%;
+                
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: stretch;
+            }
+            .form-search{
+                width: 100%;
+                
+            }
+            .search-header-input{
+                width: 90%;
+                height: 100%;
+                
+            }
+            .submit-btn-header-input{
+                width: 5%;
+
+                height: 29px;
+                transition: .2s all ease;
+            }
+        
+            
+            /* Botao de adicionar filme do header */
+            .header-add-movie{
+                display: flex;
+                height: 100%;
+            }
+
+            .btn-header-add-movie{
+                width: 100%;
+                height: 100%;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-radius: 10px;
+                white-space: nowrap;
+            }
+            .btn-header-add-movie a{
+                text-decoration: none;
+            }
+
+            .btn-header-add-movie:hover{
+                /* Colocar cor em variável */
+                background-color: red;
+                color: white;
+                
+                
+            }
+
+            @media(max-width:500px){
+                
+                .btn-header-add-movie{
+                    padding: 5px 15px;
+                    font-size: 10px;
+                    white-space: nowrap;
+                }
+            }
+
+            
 
 /* Body Estilização
         - Fazer o grid
@@ -111,44 +201,234 @@
         - se possivel aplicar um layout diferente para 'impressionar'
 */
 .main-container{
-    margin: 0;
-    padding-left: 10%;
-    padding-right: 10%;    
+    padding-left: 5%;
+    padding-right: 5%;
+    display: grid;
+    min-height: calc(100vh - 109px);
 }
 
+/* Edit Section */
+
+
+    .edit-container{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 3;
+    }
+
+    .edit-item-left{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .edit-item-right{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: stretch;
+        gap: 5px;
+    }
+
+    .edit-item-right .input-form{
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    .img-edit{
+        padding-top: 15px;
+    }
+    .img-edit img{
+        width:300px;
+        height:450px;
+    }
+    .btns-edit{
+        display: flex;
+        grid-column-start:1 ;
+        grid-column-end: 3;
+        
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: stretch;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .button-submit-edit, .button-delete-edit {
+        text-transform: uppercase;
+        padding: 10px;
+        font-weight: 600;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+        white-space: nowrap;
+        margin-left: 10px;
+        margin-right: 10px;
+        
+
+    }
+
+/* CREATE */
+
+    .inputs-create{
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        padding-left: 20%;
+        padding-right: 20%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: stretch;
+        gap: 5px;
+        
+    }
+    .btn-save-film{
+        padding-top: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .button-submit-create{
+        display: flex;
+        text-transform: uppercase;
+        padding: 10px;
+        font-weight: 600;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+        white-space: nowrap;
+        margin-left: 10px;
+        margin-right: 10px; 
+    }
+
+
+/* 
+    Index Eslização
+*/
+
+    .main-title{
+        width: 100%;
+        display: inline;
+        text-transform: uppercase;
+        padding-top: 35px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .index-main-content-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: stretch;
+        justify-content: center;
+        gap:1%;
+        align-items: stretch;
+    }
+
+    .card-film{
+        width: 200px;
+        height: 300px;
+
+    }
+
+    .top-card-info{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: normal;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    .top-card-movie-title{
+
+    }
+
+    .top-card-btn{
+        display: flex;
+        gap: 3px;
+    }
+
+    .card-img{
+        position: relative;
+        width : 200px;
+        height : 250px ;  
+    }
+    .card-img img{
+        display: block;
+        width : 200px;
+        height : 250px ;  
+        z-index: 2; 
+    }
+
+    .info-card{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: white /*#008CBA; */
+    }
+
+    .card-img:hover .info-card{
+        opacity: 0.8;
+    }
+
+    .info-card p{
+        padding-bottom: 2px;
+    }
+
+
+
+    
 
 /* Footeer Estlização
     - Atualizar layout para usar grid, e melhorar a responsividade
     - colocar icones melhores e colocar icone de <3
     - decidir a quem creditar
 */
+
 .footer-container{
-    position:absolute;
-    bottom:0;
-    display: flex;
+    text-transform: uppercase;
+    position: relative;
+    bottom: 0;
     align-items: center;
-    width: 1260px;
-    height: 30px;
     display: flex;
-    margin: 0;
-    padding: 0;
-    width: 100%;
     font-size: 15px;
     background-color: var(--corPrincipal);
     justify-content: space-between;
-    
+    width: 100%;
+    height: 50px;
+
 }
 .footer-item-author p {
-    
+    padding-left:20px ;
     text-align: center ;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.footer-item-author p a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
 }
 .footer-item-social-midia{
-margin-right: 5%;
+    margin-right: 20px;
 }
 .footer-item-social-midia i{
     position: relative;
     align-self: right;
     color: black;
-    padding-right: 20px;
+    padding-left: 20px;
     font-size: 25px;
 }

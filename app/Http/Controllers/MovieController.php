@@ -133,4 +133,13 @@ class MovieController extends Controller
             //dd($FilmesMatchByTitle);
             return view('movie.index', compact('movies')); //enviar vetor com instancias pesquisadas para blade de search blade
     }
+
+    public function rated()
+    {
+        $movies = Movie::orderBy('rating','desc')->get();
+        
+        return view('movie.index', compact('movies')); //enviar vetor com instancias pesquisadas para blade de search blade
+    }
+
+
 }
