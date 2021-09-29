@@ -31,7 +31,7 @@
 
                     <li><a class="dropbtn-hearder"> <i class="fas fa-bars"></i> <p class="dropbtn-hearder-menuTxt" > Menu </p></a>
                         <ul>
-                            <a class="btn-drop-add-movie" href="{{ route('movie.create') }}"><p> Adicionar Filme </p></a>
+                            <li class="btn-drop-add-movie"><a  href="{{ route('movie.create') }}"><p> Adicionar Filme </p></a></li>
                             <li><a class="dropdown-intems-list" href="{{route('movie.rated')}}">Top Rated Movies</a></li>
                             <li><a class="dropdown-intems-list" href="">Most Popular Movies</a></li>
                             {{-- <li><a class="dropdown-intems-list" href="">Show and Movie Genero</a></li> --}}
